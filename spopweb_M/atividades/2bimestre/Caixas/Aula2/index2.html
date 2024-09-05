@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divq{
+            border: 3px solid purple;
+            width: 200px;
+            height: 200px;
+            position: fixed;
+            transition: 1s;
+        }
+
+        #quadrado1{
+            background-color: blue;
+            z-index: 4;/*layer do quadrado*/
+        }
+        #quadrado2{
+            background-color: rebeccapurple;
+            top: 50px;
+            left: 50px;/*distancia do topo e esquerda*/
+            z-index: 3;
+        }
+        #quadrado3{
+            background-color: red;
+            top: 100px;
+            left:100px;/*distancia do topo e esquerda*/
+            z-index: 2;
+        }
+        #quadrado4{
+            background-color: orange;
+            top: 150px;
+            left:150px;/*distancia do topo e esquerda*/
+            z-index: 1;
+        }
+        #quadrado1:hover{
+            z-index: 5;
+        }
+        #quadrado2:hover{
+            z-index: 5;
+        }
+        #quadrado3:hover{
+            z-index: 5;
+        }
+        #quadrado4:hover{
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <div id="quadrado1">Quadrado1</div>
+    <div id="quadrado2">Quadrado2</div>
+    <div id="quadrado3">Quadrado3</div>
+    <div id="quadrado4">Quadrado4</div>
+</body>
+</html>

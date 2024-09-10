@@ -1,0 +1,20 @@
+img, div, p, section{
+    color: white;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    
+}
+ div{
+    background-color: blue;
+    top: 1000px;
+}
+
+section{
+    overflow: hidden;
+}
+section:hover div{
+    transition: 1s ease;
+    top: 0px;
+
+}

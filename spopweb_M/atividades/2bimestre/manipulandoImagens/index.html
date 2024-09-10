@@ -5,19 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atividade Sobre Imagens</title>
     <style>
-
-      header {
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
       main {
         width: 60%;
         display: block;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(250, 250, 250);
+      }
+      h1 {
+        padding: 5px;
+      }
+      article {
+        margin-bottom: 60px;
       }
       div {
         display: flex;
+        margin-bottom: 3px;
+        justify-content: space-around;
+      }
+      #rounded img {
+        border-radius: 30%;
+      }
+      #thumb img {
+        padding: 10px;
+        border: rgb(170, 170, 170) 1px solid;
+        border-radius: 3%;
+        width: 150px;
+        height: 150px;
+      }
+      #thumbL:hover {
+        border-color: blue;
+      }
+      #responsive img {
+        width: 90%;
+        height: 70%;
+      }
+      #center img {
+        display: block;
+        margin: auto;
+      }
+      #polaroid div {
+        background-color: white;
+        box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.373);
+        flex-direction: column;
+      }
+      #polaroid div p {
+        border: 0px;
+        text-align: center;
+      }
+      #tr1 {
+        opacity: 0.8;
+      }
+      #tr3 {
+        opacity: 0.5;
+      }
+      #tr3 {
+        opacity: 0.3;
+      }
+      #imgtext,
+      #imgtext div,
+      #imgtext img {
+        position: relative;
+      }
+      #imgtext img {
+        opacity: 0.5;
+      }
+      #imgtext p {
+        position: absolute;
+        color: red;
+        font-weight: bolder;
+        background-color: rgba(255, 255, 255, 0);
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .container {
+        position: relative;
+        width: 50%;
+      }
+
+      .image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #008cba;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: 0.5s ease;
+      }
+
+      .container:hover .overlay {
+        bottom: 0;
+        height: 100%;
+      }
+
+      .text {
+        white-space: nowrap;
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+      }
+      #flip img:hover {
+        transform: scaleX(-1);
+        transition: 1s;
       }
       img {
         width: 250px;
+        height: 250px;
       }
       section {
         background-color: rgb(215, 215, 215);
@@ -28,16 +141,50 @@
         background-color: white;
         border-left: 5px rgb(4, 175, 4) solid;
         border-radius: 2%;
-        padding: 5px;
+        padding: 15px;
       }
     </style>
   </head>
   <body>
-    <header></header>
     <main>
+      <h1>Estilos de Imagem no CSS</h1>
       <article>
         <h1>Rounded Images</h1>
-        <div>
+        <div id="rounded">
+          <div><img src="imgs/golden.jpeg" alt="" /></div>
+          <div>
+            <img src="imgs/Notredame.jpg" alt="" />
+          </div>
+          <div><img src="imgs/img1.jpeg" alt="" /></div>
+        </div>
+        <section>
+          <h2>Como fazer?</h2>
+          <p>Use a propriedade border-radius para arredondar as imagens</p>
+        </section>
+      </article>
+      <article>
+        <h1>Thumbnail Images</h1>
+        <div id="thumb">
+          <div style="display: block">
+            <img id="thumbL" src="imgs/golden.jpeg" alt="" />
+            <h5>Thumbnail como link</h5>
+          </div>
+          <div>
+            <img src="imgs/Notredame.jpg" alt="" />
+          </div>
+          <div><img src="imgs/img1.jpeg" alt="" /></div>
+        </div>
+        <section>
+          <h2>Como fazer?</h2>
+          <p>
+            Use as propriedades de padding e border para criar uma imagem de
+            thumbnail
+          </p>
+        </section>
+      </article>
+      <article>
+        <h1>Responsive Images</h1>
+        <div id="responsive">
           <div><img src="imgs/golden.jpeg" alt="" /></div>
           <div>
             <img src="imgs/Notredame.jpg" alt="" />
@@ -46,141 +193,156 @@
         </div>
         <section>
           <h2>O que faz</h2>
-          <p></p>
-        </section>
-      </article>
-      <article>
-        <h1>Thumbnail Images</h1>
-        <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
-          <div>
-            <img src="imgs/Notredame.jpg" alt="" />
-          </div>
-          <div><img src="imgs/img1.jpeg" alt="" /></div>
-        </div>
-        <section>
-          <h2>O que faz</h2>
-          <p></p>
-        </section>
-      </article>
-      <article>
-        <h1>Responsive Images</h1>
-        <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
-          <div>
-            <img src="imgs/Notredame.jpg" alt="" />
-          </div>
-          <div><img src="imgs/img1.jpeg" alt="" /></div>
-        </div>
-        <section>
-          <h2>O que faz</h2>
-          <p></p>
+          <p>
+            Imagens responsivas ajustam seu tamanho de acordo com tamabnho da
+            tela de forma proporcional. <br />
+            Para faze-lo usa-se as propriedades width e height, com % e auto
+            atribuídos na ordem respectiva.
+          </p>
         </section>
       </article>
       <article>
         <h1>Center an Image</h1>
-        <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
-          <div>
-            <img src="imgs/Notredame.jpg" alt="" />
-          </div>
+        <div id="center">
           <div><img src="imgs/img1.jpeg" alt="" /></div>
         </div>
         <section>
-          <h2>O que faz</h2>
-          <p></p>
+          <h2>Como fazer</h2>
+          <p>
+            Transforme a imagem em um elemento block e defina margin como auto,
+            assim a imagem será centralizada.
+          </p>
         </section>
       </article>
       <article>
         <h1>Polaroid Images / Cards</h1>
-        <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
+        <div id="polaroid">
+          <div>
+            <img src="imgs/golden.jpeg" alt="" />
+            <p>Golden</p>
+          </div>
           <div>
             <img src="imgs/Notredame.jpg" alt="" />
+            <p>Catedral de Notredame</p>
           </div>
-          <div><img src="imgs/img1.jpeg" alt="" /></div>
+          <div>
+            <img src="imgs/img1.jpeg" alt="" />
+            <p>Your lie in april</p>
+          </div>
         </div>
         <section>
-          <h2>O que faz</h2>
-          <p></p>
+          <h2>Como Fazer</h2>
+          <p>
+            Para fazer uma imagem polaroid use um conteiner com background
+            branco e adicione uma legenda centralizada
+          </p>
         </section>
       </article>
       <article>
         <h1>Transparent Image</h1>
         <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
-          <div>
+          <div id="tr1"><img src="imgs/golden.jpeg" alt="" /></div>
+          <div id="tr2">
             <img src="imgs/Notredame.jpg" alt="" />
           </div>
-          <div><img src="imgs/img1.jpeg" alt="" /></div>
+          <div id="tr3"><img src="imgs/img1.jpeg" alt="" /></div>
         </div>
         <section>
           <h2>O que faz</h2>
-          <p></p>
+          <p>Deixa as imagens transparentes através da propiedada opacity</p>
         </section>
       </article>
       <article>
         <h1>Image Text</h1>
-        <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
+        <div id="imgtext">
+          <div>
+            <img src="imgs/golden.jpeg" alt="" />
+            <p style="top: 10px; left: 10px">Top Left</p>
+          </div>
           <div>
             <img src="imgs/Notredame.jpg" alt="" />
+            <p style="top: 200px; left: 130px">Bottom Right</p>
           </div>
-          <div><img src="imgs/img1.jpeg" alt="" /></div>
+          <div>
+            <img src="imgs/img1.jpeg" alt="" />
+            <p>Center</p>
+          </div>
         </div>
         <section>
           <h2>O que faz</h2>
-          <p></p>
+          <p>
+            Para adicionar texto em cima da imagem, coloque uma tag de texto no
+            mesmo container pai da img, então defina sua posição como abolute e
+            a posição das outras tags de relative, assim pode-se controlar a
+            posição do texto com as propriedades top, left, bottom e Right.
+          </p>
         </section>
       </article>
       <article>
         <h1>Image Filter</h1>
         <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
           <div>
-            <img src="imgs/Notredame.jpg" alt="" />
+            <img src="imgs/golden.jpeg" alt="" style="filter: blur(10px)" />
           </div>
-          <div><img src="imgs/img1.jpeg" alt="" /></div>
+          <div>
+            <img
+              src="imgs/Notredame.jpg"
+              alt=""
+              style="filter: grayscale(100%)"
+            />
+          </div>
+          <div>
+            <img src="imgs/img1.jpeg" alt="" style="filter: invert(100%)" />
+          </div>
         </div>
         <section>
           <h2>O que faz</h2>
-          <p></p>
-        </section>
-      </article>
-      <article>
-        <h1>Image Filters</h1>
-        <div></div>
-        <section>
-          <h2>O que faz</h2>
-          <p></p>
+          <p>Use a propriedade filter para modificar os filtros de imagem</p>
         </section>
       </article>
       <article>
         <h1>Image Hover Overlay</h1>
         <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
-          <div>
-            <img src="imgs/Notredame.jpg" alt="" />
-          </div>
-          <div><img src="imgs/img1.jpeg" alt="" /></div>
+            <div class="container">
+              <img src="imgs/golden.jpeg" alt="Avatar" class="image" />
+              <div class="overlay">
+                <div class="text">Hello World</div>
+              </div>
+            </div>
+            <div class="container">
+                <img src="imgs/Notredame.jpg" alt="Avatar" class="image" />
+                <div class="overlay">
+                  <div class="text">Notredame</div>
+                </div>
+              </div>
+              <div class="container">
+                <img src="imgs/img1.jpeg" alt="Avatar" class="image" />
+                <div class="overlay">
+                  <div class="text">Piano</div>
+                </div>
+              </div>
         </div>
+
         <section>
           <h2>O que faz</h2>
-          <p></p>
+          <p>
+            Mostra um texto em cima da imagem quando o mouse esta em cima da
+            mesma
+          </p>
         </section>
       </article>
       <article>
         <h1>Flip an Image</h1>
-        <div>
-           <div><img src="imgs/golden.jpeg" alt="" /></div>
-          <div>
+        <div id="flip">
+          <div class="cont"><img src="imgs/golden.jpeg" alt="" /></div>
+          <div class="cont">
             <img src="imgs/Notredame.jpg" alt="" />
           </div>
-          <div><img src="imgs/img1.jpeg" alt="" /></div>
+          <div class="cont"><img src="imgs/img1.jpeg" alt="" /></div>
         </div>
         <section>
           <h2>O que faz</h2>
-          <p></p>
+          <p>Inverte a imagem usando a propriedade transform.</p>
         </section>
       </article>
     </main>

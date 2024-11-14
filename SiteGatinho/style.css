@@ -1,0 +1,76 @@
+*{
+    text-decoration: none;
+    color: rgb(152, 116, 48);
+
+    margin: 0px;
+    position: relative;
+}
+header{
+    display: flex;
+
+    background-image: url(imgs/rad2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    justify-content: space-between;
+
+    min-height: 350px;
+    height: 400px;
+
+    color: rgb(152, 116, 48);
+    font-size: x-large;
+
+    position: relative;
+}
+#menu{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+
+    background-image: url(imgs/topo-imagem-lateral.png);
+    background-size: cover;
+
+    width: 30%;
+    min-width: 25%;
+}
+#menu nav{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    margin-left: 40px;
+    font-size: large;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px  ridge rgb(176, 127, 37);
+    border-bottom: 1px  ridge rgb(176, 127, 37);
+
+}
+#menu nav a, #menu nav a button{
+    background-color: rgb(152, 116, 48);
+
+    color: white;
+    font-size: 19px;
+
+    border: none;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#menu ul{
+    list-style: none;
+}
+#menu ul li{
+    margin-bottom: 15px;
+}
+#logo img, #logo a{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:5%;
+    left: 15%;
+    
+}
